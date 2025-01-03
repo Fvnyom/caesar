@@ -1,0 +1,32 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.home {
+    @apply bg-purple-300 text-black font-sans text-center dark:bg-purple-900 dark:text-white;
+}
+
+.btn {
+    @apply transition-all duration-150 whitespace-normal inline-flex items-center px-4 py-2 rounded-lg shadow-md text-sm font-medium text-black bg-white dark:bg-gray-800 dark:text-white;
+}
+.btn-blue {
+    @apply text-blue-500 hover:text-white hover:bg-blue-500;
+}
+.btn-green {
+    @apply text-blue-200 hover:text-white hover:bg-blue-200;
+}
+.icon {
+    @apply -mr-1 ml-2 h-5 w-5;
+}
+
+.title {
+    @apply text-4xl font-bold;
+}
+
+h2 {
+    @apply text-2xl font-bold;
+}
+
+.link {
+    @apply text-blue-600 dark:text-blue-300
+}

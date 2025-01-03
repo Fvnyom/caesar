@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+string encrypt(string text, int s, bool coin, string coinSide)
+{
+    string result = "";
+    for (int i = 0; i < text.length(); i++) {
+        // apply transformation to each character
+       
+/*         
+        // Encrypt Uppercase letters
+        if (isupper(text[i]))
+            result += char(int(text[i] + s - 65) % 26 + 65);
+*/
+
+        // Encrypt Lowercase letters
+        if(coin==true){
+            result += char(int(text[i] + s - 97) % 26 + 97);
+        }else if(int(text[i] - s - 97 >= 0)){
+            result += char(int(text[i] - s - 97) % 26 + 97);
+        }else{
+            result += char(int(text[i] - s - 97) % 26 + 123);
+        }
+  
+    }
+    // Return result
+    return result;
+}
+
+int main()
+{
+    string coinSide = "";
+    string text = "three";
+    int s = 4;
+    bool coin = false;
+    if(coin==true){
+        coinSide += "heads (+)";
+    }else{
+        coinSide += "tails (-)";
+    }
+    
+    cout << "Text : " << text;
+    cout << "\nShift: " << s;
+    cout << "\nCoin: " << coinSide;
+    cout << "\nCipher: " << encrypt(text, s, coin, coinSide);
+    return 0;
+}
